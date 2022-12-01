@@ -11,8 +11,8 @@
 declare namespace classNames {
   type Value = string | number | boolean | undefined | null;
   type Mapping = Record<string, unknown>;
-  type Argument = Value | Mapping | Argument[];
-  type ArgumentArray = Argument[];
+  interface ArgumentArray extends Array<Argument> {}
+  type Argument = Value | Mapping | ArgumentArray;
 }
 
 /**
